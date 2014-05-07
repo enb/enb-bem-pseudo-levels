@@ -12,9 +12,11 @@ lint: npm
 
 examples: npm
 	cd examples/copy-level && ../../$(ENB) make pseudo --no-cache
+	cd examples/merge-level && ../../$(ENB) make pseudo --no-cache
 
 clean: npm
 	rm -rf examples/copy-level/nested-pseudo-level.blocks
+	rm -rf examples/merge-level/pseudo-level.blocks
 
 npm:
 	npm install
