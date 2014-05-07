@@ -23,8 +23,7 @@
     "enb": ">= 0.8.22"
   },
   "dependencies": {
-    "vow": "0.4.3",
-    "vow-fs": "0.3.1"
+    "vow": "0.4.3"
   },
   "devDependencies": {
     "enb": ">= 0.8.22",
