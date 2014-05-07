@@ -11,8 +11,10 @@ lint: npm
 	$(JSCS) -c .jscs.js .
 
 examples: npm
+	cd examples/copy-level && ../../$(ENB) make pseudo --no-cache
 
 clean: npm
+	rm -rf examples/copy-level/nested-pseudo-level.blocks
 
 npm:
 	npm install
