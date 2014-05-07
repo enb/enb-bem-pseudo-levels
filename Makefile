@@ -15,7 +15,6 @@ examples: npm
 	cd examples/nested-base-level && ../../$(ENB) make pseudo --no-cache
 	cd examples/mix-base-multilevel && ../../$(ENB) make pseudo --no-cache
 	cd examples/mix-base-level && ../../$(ENB) make pseudo --no-cache
-	cd examples/glob && ../../$(ENB) make pseudo --no-cache
 
 clean: npm
 	rm -rf examples/simple-base-level/simple-pseudo-level.blocks
@@ -26,7 +25,6 @@ clean: npm
 	rm -rf examples/mix-base-level/nested-pseudo-level.blocks
 	rm -rf examples/mix-base-multilevel/simple-pseudo-multilevel.blocks
 	rm -rf examples/mix-base-multilevel/nested-pseudo-multilevel.blocks
-	rm -rf examples/glob/pseudo-level.blocks
 
 npm:
 	npm install
