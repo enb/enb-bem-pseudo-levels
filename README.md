@@ -18,8 +18,7 @@ config.task('pseudo', function () {
 
             function resolve(file) {        // resolve-функция определяет
                 return file.name;           // пути до новых файлов относительно
-                                            // 'pseudo-level.blocks'
-            }
+            }                               // 'pseudo-level.blocks'
 
         )
         .build();                           // строим новый уровень
