@@ -6,7 +6,7 @@ module.exports = function (config) {
     config.task('pseudo', function () {
         return pseudo(getLevels(config))
             .addBuilder('pseudo.sets', function (file) {
-                if(file.isDirectory && file.suffix === 'bundles') {
+                if (file.isDirectory && file.suffix === 'bundles') {
                     var files = file.files;
                     var scope = file.name.split('.')[0];
 
