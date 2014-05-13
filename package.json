@@ -34,6 +34,9 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "make validate"
+    "test": "npm run lint",
+    "lint": "jshint . && jscs -c .jscs.js .",
+    "examples": "cd examples && cd build-sets-bundles && enb make pseudo -n && cd ../copy-level && enb make pseudo && cd ../merge-level && enb make pseudo",
+    "clean": "rm -rf examples/build-sets-bundles/pseudo.sets && rm -rf examples/build-sets-bundles/.enb/tmp && rm -rf examples/copy-level/nested-pseudo-level.blocks && rm -rf examples/copy-level/.enb/tmp && rm -rf examples/merge-level/pseudo-level.blocks && rm -rf examples/merge-level/.enb/tmp"
   }
 }
