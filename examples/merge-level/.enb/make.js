@@ -2,28 +2,32 @@ var path = require('path');
 var fs = require('fs');
 var rootPath = path.join(__dirname, '..', '..', '..');
 var pseudo = require(rootPath);
-var guesser = require(path.join(rootPath, 'lib/file-guesser'));
+var naming = require('bem-naming');
 
-module.exports = function(config) {
+module.exports = function (config) {
     var levels = [
         'level-1.blocks',
         'level-2.blocks'
     ];
 
     config.task('pseudo', function (task) {
+        var levels = getLevels(config);
         var makePlatform = task.getMakePlatform();
         var cdir = makePlatform.getDir();
         var nodes = [];
 
-        return pseudo(getLevels(config))
+        return pseudo(levels)
             .addBuilder('pseudo-level.blocks', function (file, levels) {
-                var fileInfo = guesser.getFileInfo(file, levels);
-                var fileName = [fileInfo.name, fileInfo.level.name, file.suffix].join('.');
+                var name = file.name.split('.')[0];
+                var notation = naming.parse(name);
+                var nestedPath = buildNestedPath(notation);
+                var levelname = path.basename(guessLevel(file.fullname, levels));
+                var fileName = [name, levelname, file.suffix].join('.');
 
-                return path.join(fileInfo.bem.nestedPath, fileName);
+                return path.join(nestedPath, fileName);
             })
             .build()
-            .then(function(targets) {
+            .then(function (targets) {
                 nodes = targets.map(function (target) {
                     return path.dirname(target);
                 });
@@ -32,7 +36,7 @@ module.exports = function(config) {
 
                 return makePlatform.init(cdir);
             })
-            .then(function() {
+            .then(function () {
                 return makePlatform.buildTargets(nodes);
             });
     });
@@ -67,6 +71,34 @@ module.exports = function(config) {
     });
 };
 
+function guessLevel(filename, levels) {
+    var i = levels && levels.length;
+    var splited = filename.split(path.sep);
+    var level;
+
+    while (level && i--) {
+        if (splited.indexOf(levels[i]) !== -1) {
+            level = levels[i];
+        }
+    }
+
+    return level || path.dirname(filename);
+}
+
+function buildNestedPath(obj) {
+    var buf = [obj.block];
+
+    if (obj.elem) {
+        buf.push('__' + obj.elem);
+    }
+
+    if (obj.modKey) {
+        buf.push('_' + obj.modKey);
+    }
+
+    return path.join.apply(null, buf);
+}
+
 /**
  * Получение уровней блоков
  * @param {Object} config
@@ -76,7 +108,7 @@ function getLevels(config) {
     return [
         'level-1.blocks',
         'level-2.blocks'
-    ].map(function(level) {
+    ].map(function (level) {
         return config.resolvePath(level);
     });
 }

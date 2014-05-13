@@ -1,20 +1,18 @@
 var path = require('path');
 var rootPath = path.join(__dirname, '..', '..', '..');
 var pseudo = require(rootPath);
-var guesser = require(path.join(rootPath, 'lib/file-guesser'));
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.task('pseudo', function () {
         return pseudo(getLevels(config))
-            .addBuilder('pseudo.sets', function(file) {
-                if(file.isDirectory && ['bundles'].indexOf(file.suffix) !== -1) {
+            .addBuilder('pseudo.sets', function (file) {
+                if(file.isDirectory && file.suffix === 'bundles') {
                     var files = file.files;
                     var scope = file.name.split('.')[0];
-                    var sublevels = [{ path : file.fullname }];
 
-                    return files && files.length && files.map(function(file) {
-                        return one(file, sublevels, scope);
-                    }).filter(function(file) {
+                    return files && files.length && files.map (function (file) {
+                        return one(file, scope);
+                    }).filter(function (file) {
                         return file;
                     });
                 }
@@ -25,13 +23,13 @@ module.exports = function(config) {
     });
 };
 
-function one(file, levels, scope) {
-    var fileInfo = guesser.getFileInfo(file, levels);
-    var fileName = file.name;
+function one (file, scope) {
+    var name = file.name;
+    var node = name.split('.')[0];
 
     return {
-        targetPath : path.join(scope, fileInfo.name, fileName),
-        sourcePath : file.fullname
+        targetPath: path.join(scope, node, name),
+        sourcePath: file.fullname
     };
 }
 
@@ -43,7 +41,7 @@ function one(file, levels, scope) {
 function getLevels(config) {
     return [
         'nested-level.blocks'
-    ].map(function(level) {
+    ].map(function (level) {
         return config.resolvePath(level);
     });
 }

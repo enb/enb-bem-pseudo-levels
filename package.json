@@ -29,7 +29,8 @@
     "enb": ">= 0.8.22",
     "enb-validate-code": "0.0.1",
     "jshint": "2.5.0",
-    "jscs": "1.3.0"
+    "jscs": "1.3.0",
+    "bem-naming": "0.0.1"
   },
   "main": "lib/index.js",
   "scripts": {
