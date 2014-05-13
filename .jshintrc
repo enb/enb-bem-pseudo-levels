@@ -1,6 +1,5 @@
 {
     "curly": true,
-    "eqeqeq": true,
     "immed": true,
     "newcap": true,
     "noarg": true,
@@ -9,9 +8,6 @@
     "undef": true,
     "unused": true,
     "trailing": true,
-    "maxlen": 120,
-    "quotmark": "single",
-    "indent": 4,
     "node": true,
     "globals": {
     /* MOCHA */
