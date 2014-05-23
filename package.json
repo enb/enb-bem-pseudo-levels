@@ -28,8 +28,8 @@
   "devDependencies": {
     "enb": ">= 0.8.22",
     "enb-validate-code": "0.0.1",
-    "jshint": "2.5.0",
-    "jscs": "1.4.3",
+    "jshint": "2.5.1",
+    "jscs": "1.4.5",
     "bem-naming": "0.0.3"
   },
   "main": "lib/index.js",
