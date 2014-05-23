@@ -92,8 +92,8 @@ function buildNestedPath(obj) {
         buf.push('__' + obj.elem);
     }
 
-    if (obj.modKey) {
-        buf.push('_' + obj.modKey);
+    if (obj.modName) {
+        buf.push('_' + obj.modName);
     }
 
     return path.join.apply(null, buf);
