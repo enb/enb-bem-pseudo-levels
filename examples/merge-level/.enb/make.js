@@ -18,7 +18,7 @@ module.exports = function (config) {
         var nodes = [];
 
         return pseudo(levels)
-            .addBuilder(dstpath, function (file, levels) {
+            .addBuilder(dstpath, function (file, levels, dstpath) {
                 var name = file.name.split('.')[0];
                 var notation = naming.parse(name);
                 var nestedPath = buildNestedPath(notation);

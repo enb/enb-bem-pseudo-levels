@@ -8,7 +8,7 @@ module.exports = function (config) {
         var dstpath = config.resolvePath('nested-pseudo-level.blocks');
 
         return pseudo(getLevels(config))
-            .addBuilder(dstpath, function (file) {
+            .addBuilder(dstpath, function (file, levels, dstpath) {
                 if (file.suffix === 'txt') {
                     var name = file.name.split('.')[0];
                     var notation = naming.parse(name);
