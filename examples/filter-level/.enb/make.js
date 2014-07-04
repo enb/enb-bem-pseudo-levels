@@ -5,8 +5,10 @@ var naming = require('bem-naming');
 
 module.exports = function (config) {
     config.task('pseudo', function () {
+        var dstpath = config.resolvePath('nested-pseudo-level.blocks');
+
         return pseudo(getLevels(config))
-            .addBuilder('nested-pseudo-level.blocks', function (file) {
+            .addBuilder(dstpath, function (file) {
                 if (file.suffix === 'txt') {
                     var name = file.name.split('.')[0];
                     var notation = naming.parse(name);

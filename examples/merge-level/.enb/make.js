@@ -14,10 +14,11 @@ module.exports = function (config) {
         var levels = getLevels(config);
         var makePlatform = task.getMakePlatform();
         var cdir = makePlatform.getDir();
+        var dstpath = config.resolvePath('pseudo-level.blocks');
         var nodes = [];
 
         return pseudo(levels)
-            .addBuilder('pseudo-level.blocks', function (file, levels) {
+            .addBuilder(dstpath, function (file, levels) {
                 var name = file.name.split('.')[0];
                 var notation = naming.parse(name);
                 var nestedPath = buildNestedPath(notation);
@@ -27,8 +28,10 @@ module.exports = function (config) {
                 return path.join(nestedPath, fileName);
             })
             .build()
-            .then(function (targets) {
-                nodes = targets.map(function (target) {
+            .then(function (filenames) {
+                nodes = filenames.map(function (filename) {
+                    var target = path.relative(cdir, filename);
+
                     return path.dirname(target);
                 });
 

@@ -21,13 +21,15 @@ var pseudo = require('enb-pseudo-levels');
 
 module.exports = function (config) {
 
+var dstpath = config.resolvePath('pseudo-level');
+
 config.task('pseudo', function () {         // Создаём таск с названием `pseudo`,
                                             // в котором будем производить
                                             // манипуляции с уровнями.
 
     return pseudo(getLevels(config))        // Сканируем исходные уровни.        (1)
 
-        .addBuilder('pseudo-level',         // Задаём путь нового уровня.        (2)
+        .addBuilder(dstpath,                // Задаём путь нового уровня.        (2)
 
             function resolve(file) {        // resolve-функция определяет
                 return file.name;           // пути до новых файлов относительно
