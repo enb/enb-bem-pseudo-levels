@@ -21,27 +21,26 @@ var pseudo = require('enb-pseudo-levels');
 
 module.exports = function (config) {
 
-var dstpath = config.resolvePath('pseudo-level');
+var dstpath = config.resolvePath('pseudo-level');  // путь до нового уровня
 
-config.task('pseudo', function () {         // Создаём таск с названием `pseudo`,
-                                            // в котором будем производить
-                                            // манипуляции с уровнями.
+// Создаём таск с названием `pseudo`, для манипуляций с уровнями.
+config.task('pseudo', function () {
 
-    return pseudo(getLevels(config))        // Сканируем исходные уровни.        (1)
-
-        .addBuilder(dstpath,                // Задаём путь нового уровня.        (2)
-
-            function resolve(file) {        // resolve-функция определяет
-                return file.name;           // пути до новых файлов относительно
-            }                               // 'pseudo-level'
-
-        )
-        .build();                           // Строим новый уровень              (3)
+return pseudo(getLevels(config))    // Сканируем исходные уровни.    (1)
+    .addBuilder(dstpath, resolve)   // Задаём путь и resolve-функцию (2)
+    .build();                       // Строим новый уровень          (3)
 });
 
 };
 
-function getLevels(config) {
+function resolve (file, levels) {
+    return {
+        sourcePath: file.fullname,                 // путь до исходного файла
+        targetPath: path.join(dstpath, file.name)  // путь до нового файла
+    };
+}
+
+function getLevels (config) {
     return [
         'source-level'
     ].map(function (level) {

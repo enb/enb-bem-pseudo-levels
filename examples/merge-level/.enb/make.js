@@ -25,7 +25,10 @@ module.exports = function (config) {
                 var levelname = path.basename(guessLevel(file.fullname, levels));
                 var fileName = [name, levelname, file.suffix].join('.');
 
-                return path.join(nestedPath, fileName);
+                return {
+                    sourcePath: file.fullname,
+                    targetPath: path.join(dstpath, nestedPath, fileName)
+                };
             })
             .build()
             .then(function (filenames) {

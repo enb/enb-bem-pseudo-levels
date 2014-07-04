@@ -13,7 +13,10 @@ module.exports = function (config) {
                 var notation = naming.parse(name);
                 var nestedPath = buildNestedPath(notation);
 
-                return path.join(nestedPath, file.name);
+                return {
+                    sourcePath: file.fullname,
+                    targetPath: path.join(dstpath, nestedPath, file.name)
+                };
             })
             .build();
     });
