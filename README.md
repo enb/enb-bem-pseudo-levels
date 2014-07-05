@@ -41,10 +41,10 @@ return pseudo(getLevels(config))    // Сканируем исходные ур�
  * @param dstpath путь до нового уровня
  */
 function resolve (file, levels, dstpath) {
-    return {
+    return [{
         sourcePath: file.fullname,                 // путь до исходного файла
         targetPath: path.join(dstpath, file.name)  // путь до нового файла
-    };
+    }];
 }
 
 function getLevels (config) {
