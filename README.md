@@ -1,5 +1,5 @@
-enb-pseudo-levels [![Build Status](https://travis-ci.org/enb-bem/enb-pseudo-levels.svg?branch=master)](https://travis-ci.org/enb-bem/enb-pseudo-levels) [![Dependency Status](https://david-dm.org/enb-bem/enb-pseudo-levels.svg)](https://david-dm.org/enb-bem/enb-pseudo-levels)
-=================
+enb-bem-pseudo-levels [![Build Status](https://travis-ci.org/enb-bem/enb-bem-pseudo-levels.svg?branch=master)](https://travis-ci.org/enb-bem/enb-bem-pseudo-levels) [![Dependency Status](https://david-dm.org/enb-bem/enb-bem-pseudo-levels.svg)](https://david-dm.org/enb-bem/enb-bem-pseudo-levels)
+=====================
 
 Инструмент для манипуляции с уровнями переопределений для ENB. Позволяет создавать уровни на основе уже существующих.
 
@@ -9,7 +9,7 @@ enb-pseudo-levels [![Build Status](https://travis-ci.org/enb-bem/enb-pseudo-leve
 ----------
 
 ```
-npm install --save-dev enb-pseudo-levels
+npm install --save-dev enb-bem-pseudo-levels
 ```
 
 Для работы модуля требуется зависимость от пакета enb версии `0.8.22` или выше.
@@ -26,7 +26,7 @@ npm install --save-dev enb-pseudo-levels
 Пример того, как скопировать `nested`-уровень и положить его на файловую систему в `simple`-стиле:
 
 ```js
-var pseudo = require('enb-pseudo-levels');
+var pseudo = require('enb-bem-pseudo-levels');
 
 module.exports = function (config) {
 
