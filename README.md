@@ -5,6 +5,15 @@ enb-pseudo-levels [![Build Status](https://travis-ci.org/andrewblond/enb-pseudo-
 
 Текущая реализация основана на симлинках. Это означает, что созданный уровень будет состоять из симлинкок на файлы исходных уровней.
 
+Установка
+----------
+
+```
+npm install --save-dev enb-pseudo-levels
+```
+
+Для работы модуля требуется зависимость от пакета enb версии `0.8.22` или выше.
+
 Как использовать?
 -----------------
 
@@ -25,10 +34,15 @@ var dstpath = config.resolvePath('pseudo-level');  // путь до нового
 
 // Создаём таск с названием `pseudo`, для манипуляций с уровнями.
 config.task('pseudo', function () {
+var args = [].slice.call(arguments, 1).map(function (arg) {
+    return config.resolvePath(arg);
+});                                 // Получаем список целей, которые хотим
+                                    // построить в новом уровне. Если список пуст
+                                    // уровень будет построен полностью.
 
 return pseudo(getLevels(config))    // Сканируем исходные уровни.    (1)
     .addBuilder(dstpath, resolve)   // Задаём путь и resolve-функцию (2)
-    .build();                       // Строим новый уровень          (3)
+    .build(args);                   // Строим новый уровень          (3)
 });
 
 };
@@ -61,16 +75,3 @@ function getLevels (config) {
 ```bash
 $ ./node_modules/.bin/enb make pseudo
 ```
-
-Установка
-----------
-
-```
-npm install --save-dev enb-pseudo-levels
-```
-
-Для работы модуля требуется зависимость от пакета enb версии 0.8.22 или выше.
-
-Разработка
-----------
-Руководство на [отдельной странице](/CONTRIBUTION.md).
