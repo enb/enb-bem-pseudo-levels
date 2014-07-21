@@ -23,12 +23,12 @@
     "enb": ">= 0.8.22"
   },
   "dependencies": {
-    "vow": "0.4.4"
+    "vow": "0.4.5"
   },
   "devDependencies": {
     "enb": ">= 0.8.22",
     "enb-validate-code": "0.0.1",
-    "jshint": "2.5.1",
+    "jshint": "2.5.2",
     "jscs": "1.4.5",
     "bem-naming": "0.1.0"
   },
