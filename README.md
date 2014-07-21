@@ -1,4 +1,4 @@
-enb-pseudo-levels [![Build Status](https://travis-ci.org/andrewblond/enb-pseudo-levels.svg?branch=master)](https://travis-ci.org/andrewblond/enb-pseudo-levels) [![Dependency Status](https://gemnasium.com/andrewblond/enb-pseudo-levels.svg)](https://gemnasium.com/andrewblond/enb-pseudo-levels)
+enb-pseudo-levels [![Build Status](https://travis-ci.org/enb-bem/enb-pseudo-levels.svg?branch=master)](https://travis-ci.org/enb-bem/enb-pseudo-levels) [![Dependency Status](https://gemnasium.com/enb-bem/enb-pseudo-levels.svg)](https://gemnasium.com/enb-bem/enb-pseudo-levels)
 =================
 
 Инструмент для манипуляции с уровнями переопределений для ENB. Позволяет создавать уровни на основе уже существующих.
