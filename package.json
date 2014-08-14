@@ -2,7 +2,7 @@
   "author": "Andrew Abramov <andrewblond@yandex.com>",
   "description": "Pseudo BEM levels for ENB",
   "name": "enb-bem-pseudo-levels",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "repository": "git://github.com/enb-bem/enb-bem-pseudo-levels",
   "homepage": "https://github.com/enb-bem/enb-bem-pseudo-levels",
   "bugs": "https://github.com/enb-bem/enb-bem-pseudo-levels/issues",
