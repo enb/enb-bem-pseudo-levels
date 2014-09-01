@@ -1,7 +1,7 @@
-var path = require('path');
-var rootPath = path.join(__dirname, '..', '..', '..');
-var pseudo = require(rootPath);
-var naming = require('bem-naming');
+var path = require('path'),
+    rootPath = path.join(__dirname, '..', '..', '..'),
+    pseudo = require(rootPath),
+    naming = require('bem-naming');
 
 module.exports = function (config) {
     config.task('pseudo', function () {
@@ -9,9 +9,9 @@ module.exports = function (config) {
 
         return pseudo(getLevels(config))
             .addBuilder(dstpath, function (file, levels, dstpath) {
-                var name = file.name.split('.')[0];
-                var notation = naming.parse(name);
-                var nestedPath = buildNestedPath(notation);
+                var name = file.name.split('.')[0],
+                    notation = naming.parse(name),
+                    nestedPath = buildNestedPath(notation);
 
                 return {
                     sourcePath: file.fullname,
