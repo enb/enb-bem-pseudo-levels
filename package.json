@@ -29,7 +29,7 @@
     "enb": ">= 0.8.22",
     "jshint": "2.5.5",
     "jscs": "1.6.0",
-    "bem-naming": "0.2.1"
+    "bem-naming": "0.3.0"
   },
   "main": "lib/index.js",
   "scripts": {
