@@ -2,7 +2,7 @@
   "author": "Andrew Abramov <andrewblond@yandex.com>",
   "description": "Pseudo levels for ENB",
   "name": "enb-pseudo-levels",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publishConfig": {
     "tag": "0.1.x"
   },
