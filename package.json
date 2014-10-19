@@ -3,6 +3,9 @@
   "description": "Pseudo levels for ENB",
   "name": "enb-pseudo-levels",
   "version": "0.1.4",
+  "publishConfig": {
+    "tag": "0.1.x"
+  },
   "repository": "git://github.com/andrewblond/enb-pseudo-levels",
   "homepage": "https://github.com/andrewblond/enb-pseudo-levels",
   "bugs": "https://github.com/andrewblond/enb-pseudo-levels/issues",
