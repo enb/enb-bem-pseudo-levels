@@ -2,10 +2,7 @@
   "author": "Andrew Abramov <andrewblond@yandex.com>",
   "description": "Pseudo levels for ENB",
   "name": "enb-pseudo-levels",
-  "version": "0.1.5",
-  "publishConfig": {
-    "tag": "0.1.x"
-  },
+  "version": "0.1.6",
   "repository": "git://github.com/andrewblond/enb-pseudo-levels",
   "homepage": "https://github.com/andrewblond/enb-pseudo-levels",
   "bugs": "https://github.com/andrewblond/enb-pseudo-levels/issues",
