@@ -77,3 +77,8 @@ function getLevels (config) {
 ```bash
 $ ./node_modules/.bin/enb make pseudo
 ```
+
+Лицензия
+--------
+
+© 2014 YANDEX LLC. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).
