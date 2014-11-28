@@ -1,7 +1,7 @@
 module.exports = {
     excludeFiles: [
         'node_modules',
-        'examples/*/.enb/tmp'
+        'examples'
     ],
     requireSpaceAfterKeywords: ['if', 'else', 'for', 'while', 'do', 'switch', 'return', 'try', 'catch'],
     requireSpaceBeforeBlockStatements: true,

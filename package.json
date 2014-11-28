@@ -25,13 +25,13 @@
     "enb": ">= 0.8.22"
   },
   "dependencies": {
-    "vow": "0.4.5"
+    "vow": "0.4.7"
   },
   "devDependencies": {
     "enb": ">= 0.8.22",
-    "jshint": "2.5.5",
-    "jscs": "1.6.0",
-    "bem-naming": "0.3.0"
+    "jshint": "2.5.10",
+    "jscs": "1.8.0",
+    "bem-naming": "0.4.0"
   },
   "main": "lib/index.js",
   "scripts": {
