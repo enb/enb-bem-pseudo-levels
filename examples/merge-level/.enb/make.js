@@ -27,7 +27,8 @@ module.exports = function (config) {
 
                 return {
                     sourcePath: file.fullname,
-                    targetPath: path.join(dstpath, nestedPath, fileName)
+                    targetPath: path.join(dstpath, nestedPath, fileName),
+                    isDirectory: file.isDirectory
                 };
             })
             .build()
