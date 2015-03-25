@@ -1,7 +1,7 @@
 enb-bem-pseudo-levels
 =====================
 
-[![NPM version](http://img.shields.io/npm/v/enb-bem-pseudo-levels.svg?style=flat)](http://badge.fury.io/js/enb-bem-pseudo-levels) [![Build Status](http://img.shields.io/travis/enb-bem/enb-bem-pseudo-levels.svg?branch=master&style=flat)](https://travis-ci.org/enb-bem/enb-bem-pseudo-levels) [![Dependency Status](http://img.shields.io/david/enb-bem/enb-bem-pseudo-levels.svg?style=flat)](https://david-dm.org/enb-bem/enb-bem-pseudo-levels)
+[![NPM version](https://img.shields.io/npm/v/enb-bem-pseudo-levels.svg?style=flat)](https://badge.fury.io/js/enb-bem-pseudo-levels) [![Build Status](https://img.shields.io/travis/enb-bem/enb-bem-pseudo-levels.svg?branch=master&style=flat)](https://travis-ci.org/enb-bem/enb-bem-pseudo-levels) [![Dependency Status](https://img.shields.io/david/enb-bem/enb-bem-pseudo-levels.svg?style=flat)](https://david-dm.org/enb-bem/enb-bem-pseudo-levels)
 
 Инструмент для манипуляции уровнями переопределений для ENB позволяет создавать уровни на основе уже существующих.
 
