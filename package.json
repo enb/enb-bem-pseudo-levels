@@ -25,7 +25,7 @@
     "enb": ">= 0.15.0 < 2.0.0"
   },
   "dependencies": {
-    "vow": "0.4.7",
+    "vow": "0.4.11",
     "enb-bem-techs": "2.1.0"
   },
   "devDependencies": {
