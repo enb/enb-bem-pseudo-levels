@@ -3,13 +3,13 @@
   "description": "Pseudo BEM levels for ENB",
   "name": "enb-bem-pseudo-levels",
   "version": "0.3.0",
-  "repository": "git://github.com/enb-bem/enb-bem-pseudo-levels",
-  "homepage": "https://github.com/enb-bem/enb-bem-pseudo-levels",
-  "bugs": "https://github.com/enb-bem/enb-bem-pseudo-levels/issues",
+  "repository": "git://github.com/enb/enb-bem-pseudo-levels",
+  "homepage": "https://github.com/enb/enb-bem-pseudo-levels",
+  "bugs": "https://github.com/enb/enb-bem-pseudo-levels/issues",
   "licenses": [
     {
       "type": "MPL-2.0",
-      "url": "https://github.com/enb-bem/enb-bem-pseudo-levels/blob/master/LICENSE.txt"
+      "url": "https://github.com/enb/enb-bem-pseudo-levels/blob/master/LICENSE.txt"
     }
   ],
   "contributors": [
